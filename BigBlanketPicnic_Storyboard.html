@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Blanket Picnic Ireland — Storyboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0d0d0d;
+    color: #f0f0f0;
+    padding: 40px 60px;
+  }
+
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  /* ── Title Slide ── */
+  .title-slide {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid #2a2a2a;
+    margin-bottom: 60px;
+  }
+
+  .title-slide h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #f5af19, #f12711);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .title-slide .sub {
+    font-size: 1.3rem;
+    color: #888;
+    margin-top: 16px;
+    font-weight: 400;
+  }
+
+  .title-slide .meta {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 30px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .cast-block {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cast-item {
+    text-align: center;
+  }
+
+  .cast-item .name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #f5af19;
+  }
+
+  .cast-item .desc {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 4px;
+  }
+
+  /* ── Beat Card ── */
+  .beat {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #222;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .beat-images {
+    flex: 0 0 58%;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .beat-images img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    transition: transform 0.2s;
+  }
+
+  .beat-images img:hover {
+    transform: scale(1.02);
+  }
+
+  .beat-images .img-grid-1 img {
+    max-height: 420px;
+  }
+
+  .beat-images .img-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .beat-images .img-grid-2 img {
+    max-height: 300px;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .beat-info {
+    flex: 1;
+    padding-top: 4px;
+  }
+
+  .beat-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #f12711;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  .beat-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+
+  .beat-time {
+    font-size: 0.85rem;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #f5af19;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 18px;
+    margin-bottom: 4px;
+  }
+
+  .lens, .equipment {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ccc;
+  }
+
+  .dialogue {
+    margin-top: 18px;
+    padding: 12px 16px;
+    background: #1a1a1a;
+    border-left: 3px solid #f5af19;
+    border-radius: 6px;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+  }
+
+  .dialogue .speaker {
+    font-style: normal;
+    font-weight: 700;
+    color: #f5af19;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #444;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    border-top: 1px solid #222;
+    margin-top: 20px;
+  }
+
+  .footer strong {
+    color: #f5af19;
+  }
+
+  @media print {
+    body { background: #fff; color: #111; padding: 20px; }
+    .title-slide h1 { -webkit-text-fill-color: #c0392b; }
+    .cast-item .name { color: #c0392b; }
+    .label { color: #c0392b; }
+    .dialogue { background: #f5f5f5; border-left-color: #c0392b; }
+    .beat { border-bottom-color: #ddd; }
+    .footer, .beat-time, .title-slide .meta { color: #888; }
+    .lens, .equipment, .beat-title { color: #111; }
+    .dialogue .speaker, .footer strong { color: #c0392b; }
+    .dialogue { color: #333; }
+    .beat { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- TITLE SLIDE -->
+  <div class="title-slide">
+    <h1>BIG BLANKET PICNIC<br>IRELAND</h1>
+    <p class="sub">Storyboard — Tech Script</p>
+    <p class="meta">Duration: ~38s &nbsp;|&nbsp; Format: 9:16 Vertical &nbsp;|&nbsp; 1st August 3–9PM</p>
+    <div class="cast-block">
+      <div class="cast-item">
+        <p class="name">CHEF</p>
+        <p class="desc">Lead. At the BBQ. Nigerian Pidgin English.</p>
+      </div>
+      <div class="cast-item">
+        <p class="name">FRIEND</p>
+        <p class="desc">Lead. Stuck in traffic. Nigerian Pidgin English.</p>
+      </div>
+      <div class="cast-item">
+        <p class="name">FEMALE FRIEND</p>
+        <p class="desc">Supporting. Irish accent.</p>
+      </div>
+      <div class="cast-item">
+        <p class="name">BACKGROUND</p>
+        <p class="desc">2–3 people. Dancing, socialising.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEAT 1 -->
+  <div class="beat">
+    <div class="beat-images">
+      <div class="img-grid-2">
+        <img src="Scene 1/1.jpg" alt="Beat 1 frame 1">
+        <img src="Scene 1/2.jpg" alt="Beat 1 frame 2">
+      </div>
+    </div>
+    <div class="beat-info">
+      <p class="beat-number">BEAT 1</p>
+      <h2 class="beat-title">The Chef</h2>
+      <p class="beat-time">00:00 – 00:05</p>
+
+      <p class="label">Lens &amp; Camera Angle</p>
+      <p class="lens">24mm, low angle dutch tilt slightly.</p>
+
+      <p class="label">Equipment</p>
+      <p class="equipment">Gimbal — slow push in from low as he speaks.</p>
+
+      <div class="dialogue">
+        <span class="speaker">CHEF:</span> "Oya, you dey come or not?"
+      </div>
+    </div>
+  </div>
+
+  <!-- BEAT 2 -->
+  <div class="beat">
+    <div class="beat-images">
+      <div class="img-grid-2">
+        <img src="Scene 2/1.jpg" alt="Beat 2 frame 1">
+        <img src="Scene 2/2.jpg" alt="Beat 2 frame 2">
+      </div>
+    </div>
+    <div class="beat-info">
+      <p class="beat-number">BEAT 2</p>
+      <h2 class="beat-title">Stuck in Traffic</h2>
+      <p class="beat-time">00:05 – 00:14</p>
+
+      <p class="label">Lens &amp; Camera Angle</p>
+      <p class="lens">24mm from the side, level with the window — wide enough to catch the surrounding traffic in frame while keeping him as the clear subject.</p>
+
+      <p class="label">Equipment</p>
+      <p class="equipment">Tripod — locked off at the side of the car, clean and still so the chaos of traffic around him does the work.</p>
+
+      <div class="dialogue">
+        <span class="speaker">FRIEND:</span> "Bros, I dey hold for traffic o, no vex."
+      </div>
+    </div>
+  </div>
+
+  <!-- BEAT 3 -->
+  <div class="beat">
+    <div class="beat-images">
+      <div class="img-grid-1">
+        <img src="Scene 3/1.jpg" alt="Beat 3 frame 1">
+      </div>
+    </div>
+    <div class="beat-info">
+      <p class="beat-number">BEAT 3</p>
+      <h2 class="beat-title">The Horn</h2>
+      <p class="beat-time">00:14 – 00:19</p>
+
+      <p class="label">Lens &amp; Camera Angle</p>
+      <p class="lens">50mm from the side — tighter than Beat 2, pulling focus to his expression and reaction while traffic compresses behind him.</p>
+
+      <p class="label">Equipment</p>
+      <p class="equipment">Tripod — locked off, same side position as Beat 2.</p>
+
+      <div class="dialogue">
+        <span class="speaker">FRIEND:</span> "Abeg wait now, you no see we dey inside traffic!"
+      </div>
+    </div>
+  </div>
+
+  <!-- BEAT 4 -->
+  <div class="beat">
+    <div class="beat-images">
+      <div class="img-grid-1">
+        <img src="Scene 4/1.jpg" alt="Beat 4 frame 1">
+      </div>
+    </div>
+    <div class="beat-info">
+      <p class="beat-number">BEAT 4</p>
+      <h2 class="beat-title">No Blanket</h2>
+      <p class="beat-time">00:19 – 00:24</p>
+
+      <p class="label">Lens &amp; Camera Angle</p>
+      <p class="lens">50mm from the side — tight on his face, window frame cutting the shot naturally, shallow depth of field.</p>
+
+      <p class="label">Equipment</p>
+      <p class="equipment">Tripod — locked off completely, same eyeline as Beats 2 and 3.</p>
+
+      <div class="dialogue">
+        <span class="speaker">FRIEND:</span> "Ah, see ehn — I no even get blanket o."
+      </div>
+    </div>
+  </div>
+
+  <!-- BEAT 5 -->
+  <div class="beat">
+    <div class="beat-images">
+      <div class="img-grid-2">
+        <img src="Scene 5/1.jpg" alt="Beat 5 frame 1">
+        <img src="Scene 5/2.jpg" alt="Beat 5 frame 2">
+      </div>
+    </div>
+    <div class="beat-info">
+      <p class="beat-number">BEAT 5</p>
+      <h2 class="beat-title">The Save</h2>
+      <p class="beat-time">00:24 – 00:28</p>
+
+      <p class="label">Lens &amp; Camera Angle</p>
+      <p class="lens">24mm — wide enough to hold both her and the Chef in frame with the event breathing behind them.</p>
+
+      <p class="label">Equipment</p>
+      <p class="equipment">Gimbal — slow drift follows her slightly as she exits back into the crowd.</p>
+
+      <div class="dialogue">
+        <span class="speaker">FEMALE FRIEND</span> (Irish accent): "Don't worry, we've got one here."
+      </div>
+    </div>
+  </div>
+
+  <!-- BEAT 6 -->
+  <div class="beat">
+    <div class="beat-images">
+      <div class="img-grid-1">
+        <img src="Scene 6/1.jpg" alt="Beat 6 frame 1">
+      </div>
+    </div>
+    <div class="beat-info">
+      <p class="beat-number">BEAT 6</p>
+      <h2 class="beat-title">The Sign-Off</h2>
+      <p class="beat-time">00:28 – 00:34</p>
+
+      <p class="label">Lens &amp; Camera Angle</p>
+      <p class="lens">50mm side angle through the window on the Friend, 24mm on the Chef at the grill.</p>
+
+      <p class="label">Equipment</p>
+      <p class="equipment">Tripod on Friend, Gimbal on Chef — slow pull back revealing more of the BBQ setup.</p>
+
+      <div class="dialogue">
+        <span class="speaker">FRIEND:</span> "Okay okay, I dey come, I dey come."<br><br>
+        <span class="speaker">CHEF:</span> "Oya, make you hurry come — food don almost ready."
+      </div>
+    </div>
+  </div>
+
+  <!-- BEAT 7 -->
+  <div class="beat">
+    <div class="beat-images">
+      <div class="img-grid-1">
+        <img src="Scene 7/2.png" alt="Beat 7 frame">
+      </div>
+    </div>
+    <div class="beat-info">
+      <p class="beat-number">BEAT 7</p>
+      <h2 class="beat-title">Title Card</h2>
+      <p class="beat-time">00:34 – 00:38</p>
+
+      <p class="label">Lens &amp; Camera Angle</p>
+      <p class="lens">8mm ground level for maximum field of view and dramatic scale, or drone wide if available.</p>
+
+      <p class="label">Equipment</p>
+      <p class="equipment">Tripod or drone — locked off.</p>
+
+      <div class="dialogue">
+        <span class="speaker">MUSIC CARRIES</span> — No dialogue
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>BIG BLANKET PICNIC IRELAND</strong> &nbsp;·&nbsp; 1st August · 3PM – 9PM &nbsp;·&nbsp; Tickets on Eventbrite<br>
+    Magnus Forever — Produced for Big Blanket Picnic Ireland
+  </div>
+
+</div>
+</body>
+</html>
